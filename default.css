@@ -431,5 +431,9 @@ h6 { font-size: 16px;}
 
 }
 
+.hyper-link{
+	color: var(--secondaryColor);
+}
+
 
 
