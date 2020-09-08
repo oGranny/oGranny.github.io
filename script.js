@@ -1,5 +1,5 @@
 console.log('Hello!!')
-const submitBtn = document.getElementById('submit-btn');
+// const submitBtn = document.getElementById('submit-btn');
 
 let theme = localStorage.getItem('theme')
 
@@ -40,6 +40,6 @@ function setTheme(mode) {
 	localStorage.setItem('theme', mode)
 }
 
-submitBtn.addEventListener('click', () => {
-	alert("tmkc");
-})
+// submitBn.addEventListener('click', () => {
+// 	alert("tmkc");
+// })
