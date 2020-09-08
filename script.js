@@ -1,4 +1,5 @@
 console.log('Hello!!')
+const submitBtn = document.getElementById('submit-btn');
 
 let theme = localStorage.getItem('theme')
 
@@ -38,3 +39,7 @@ function setTheme(mode) {
 
 	localStorage.setItem('theme', mode)
 }
+
+submitBtn.addEventListener('onpress', () => {
+	console.log("button pressed");
+})
