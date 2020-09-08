@@ -41,5 +41,5 @@ function setTheme(mode) {
 }
 
 submitBtn.addEventListener('onpress', () => {
-	console.log("button pressed");
+	alert("tmkc");
 })
