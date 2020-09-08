@@ -40,6 +40,6 @@ function setTheme(mode) {
 	localStorage.setItem('theme', mode)
 }
 
-submitBtn.addEventListener('onpress', () => {
+submitBtn.addEventListener('click', () => {
 	alert("tmkc");
 })
