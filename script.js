@@ -1,5 +1,11 @@
-console.log('Hello!!')
-// const submitBtn = document.getElementById('submit-btn');
+const nameField = document.getElementById("nameField");
+const subjectField = document.getElementById("subjectField")
+const emailField = document.getElementById("emailField")
+const messageField = document.getElementById("messageField")
+const submitBtn = document.getElementById("submit-btn")
+
+
+var request = new XMLHttpRequest;
 
 let theme = localStorage.getItem('theme')
 
@@ -39,7 +45,13 @@ function setTheme(mode) {
 
 	localStorage.setItem('theme', mode)
 }
+submitBtn.addEventListener('click', () => {
+	name = nameField.value;
+	subject = subjectField.value;
+	email = emailField.value;
+	message = messageField.value;
+	fetch(`https://formsubmissionapi.herokuapp.com/?name=${name}&email=${email}&subject=${subject}&msg=${message}`)
+		.then(Response => data = Response.json)
+		.then(data => console.log(data))
+})
 
-// submitBn.addEventListener('click', () => {
-// 	alert("tmkc");
-// })

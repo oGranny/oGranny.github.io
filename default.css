@@ -436,3 +436,8 @@ h6 { font-size: 16px;}
 }
 
 
+.submit-btn{
+	align-items: center;
+	justify-content: center;
+	align-self: center;
+}
