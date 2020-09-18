@@ -90,7 +90,7 @@ submitBtn.addEventListener('click', () => {
 		fetch(`https://formsubmissionapi.herokuapp.com/?name=${name}&email=${email}&subject=${subject}&msg=${message}`)
 			.then(Response => data = Response.json)
 			.then(data => console.log(data))
-		successMsg.innerText = "submitted your response ☺"
+		successMsg.innerText = "successfully submitted your response"
 		return submitted = true;
 	}
 })
