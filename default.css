@@ -441,3 +441,19 @@ h6 { font-size: 16px;}
 	justify-content: center;
 	align-self: center;
 }
+
+.error-message{
+	text-align: left; 
+	font-family: serif; 
+	color: red;
+	font-size: 15px;
+	padding-left: 3px;
+	border-width: 2rem;
+}
+
+.success-message{
+	text-align: center;
+	font-family: serif;
+	color: green;
+	font-size: 20px;
+}

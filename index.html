@@ -175,22 +175,26 @@
     <div class="main-container">
       <a href=""></a>
       <h3 style="text-align: center">Get In Touch</h3>
-
+      <h5 class="success-message" id="success-msg"></h5>
       <div id="contact-form">
         <a name="contact"></a>
 
         <label>Name</label>
         <input class="input-field" type="text" name="name" id="nameField" />
+        <div class="error-message" id="name-err"></div>
 
         <label>Subject</label>
         <input class="input-field" type="text" name="subject" id="subjectField" />
+        <div class="error-message" id="sub-err"></div>
 
         <label>Email</label>
         <input class="input-field" type="text" name="email" id="emailField" />
+        <div class="error-message" id="mail-err"></div>
 
         <label>Message</label>
         <textarea class="input-field" name="message" id="messageField"></textarea>
-        <!-- <button disabled="disabled">noob</button> -->
+        <div class="error-message" id="msg-err"></div>
+
         <button id="submit-btn">send</button>
       </div>
       <!-- <button id="submit-btn">send</button> -->
