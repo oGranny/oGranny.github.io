@@ -51,6 +51,7 @@ function setTheme(mode) {
 
 	localStorage.setItem('theme', mode);
 }
+
 submitBtn.addEventListener('click', () => {
 	name = nameField.value.trim();
 	subject = subjectField.value.trim();
@@ -94,6 +95,4 @@ submitBtn.addEventListener('click', () => {
 		return submitted = true;
 	}
 })
-
-
 
