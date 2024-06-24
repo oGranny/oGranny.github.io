@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link href="./output.css" rel="stylesheet"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./style.css" rel="stylesheet">
+    <title>Notes app</title>
+</head>
+
+<body class="bg-gray-700">
+
+
+    <nav class=" bg-gray-900 fixed w-full z-20 top-0 start-0 border-gray-600">
+        <div class="max-w flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="./assets/logo_big.png" class="h-8" alt="Logo">
+                <span class="self-center text-2xl font-semibold text-white">Notlify</span>
+            </a>
+            <div class="flex">
+                <div class="flex items-center mx-auto">
+                    <div class="s w-full">
+                        <input type="text" id="search"
+                            class="text-sm rounded-lg w-full ps-2.5 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white"
+                            placeholder="Search notes" required />
+                    </div>
+                    <button type="submit" id="search_btn"
+                        class="p-2.5 ms-2 text-sm text-white bg-yellow-500 rounded-lg">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="py-20">
+        <div class="container m-auto px-2 grid grid-cols-1 gap-4 md:grid-cols-3 md:px-0" id="parent_grid"></div>
+
+        <button id="add_btn" class="fixed z-40 bottom-4 right-4 bg-yellow-500 text-white px-4 py-4 rounded-lg ">
+            <svg class="h-5 w-5" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 309.059 309.059" xml:space="preserve"
+                fill="#ffffff" stroke="#ffffff">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g>
+                        <g>
+                            <path style="fill:#ffffff;"
+                                d="M280.71,126.181h-97.822V28.338C182.889,12.711,170.172,0,154.529,0S126.17,12.711,126.17,28.338 v97.843H28.359C12.722,126.181,0,138.903,0,154.529c0,15.621,12.717,28.338,28.359,28.338h97.811v97.843 c0,15.632,12.711,28.348,28.359,28.348c15.643,0,28.359-12.717,28.359-28.348v-97.843h97.822 c15.632,0,28.348-12.717,28.348-28.338C309.059,138.903,296.342,126.181,280.71,126.181z">
+                            </path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content w-6/12 rounded-lg bg-gray-800 md:width-4/12">
+                <span class="close justify-between align-center">&times;</span>
+                <form class="max-w-sm mx-auto">
+                    <div class="mb-5 pt-2">
+                        <label for="title_input" class="block mb-2 text-sm font-medium text-white">Title of
+                            note:</label>
+                        <input type="title" id="title_input"
+                            class="bg-gray-50 border border-gray-300  text-sm rounded-lg block w-full p-2.5 bg-gray-700 "
+                            placeholder="title" required />
+                    </div>
+                    <div class="mb-5">
+                        <label for="body_input" class="mb-2 text-sm pb-2 font-medium text-white">Body of
+                            note:</label>
+                        <input type="body" id="body_input"
+                            class="bg-gray-50 border border-gray-300 pt-2 text-sm rounded-lg block w-full p-2.5 bg-gray-700 "
+                            placeholder="body" required />
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit" id="submit_btn"
+                            class="p-2.5 w-20 align-center ms-2 text-sm text-center text-white bg-yellow-500 rounded-lg">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="flex">
+
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
