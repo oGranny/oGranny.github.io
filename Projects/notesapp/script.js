@@ -6,7 +6,10 @@ var close_btn = document.getElementsByClassName("close")[0];
 var search_btn = document.getElementById('search_btn')
 var search_input = document.getElementById('search')
 var cardcount = 0
+page_no = 0
 var storage = localStorage.getItem('info')
+nxt_btn = document.getElementById('pg_nxt')
+prv_btn = document.getElementById('pg_prv')
 
 if (storage === null) { storage = [] }
 else { storage = JSON.parse(storage) }
@@ -17,7 +20,11 @@ function updateStorage(storage) {
     localStorage.setItem("info", string);
 }
 
-for (let i = 0; i < storage.length; i++) {
+storage = storage.sort((a, b) => timeToMinutes(b.update) - timeToMinutes(a.update))
+
+// for (let i = 0; i < storage.length; i++) {
+
+for (let i = 10 * page_no; i < (10 * page_no) + 10; i++) {
 
     let newDiv = document.createElement('div');
     newDiv.innerHTML = card(storage[i]['title'], storage[i]['body'], storage[i]['create'], storage[i]['update'])
@@ -32,6 +39,46 @@ function timeToMinutes(time) {
     hours = time.split(':')[0]
     minutes = time.split(':')[1]
     return hours * 60 + minutes;
+}
+
+nxt_btn.onclick = function () {
+
+    page_no += 1
+    console.log(page_no);
+
+    grid.innerHTML = ''
+    for (let i = 10 * page_no; i < (10 * page_no) + 10; i++) {
+        if (i <= storage.length && i >= 0) {
+            let newDiv = document.createElement('div');
+
+            newDiv.innerHTML = card(storage[i]['title'], storage[i]['body'], storage[i]['create'], storage[i]['update'])
+            newDiv.setAttribute("class", "bg-gray-800 text-white p-5 rounded-2xl relative card");
+
+
+            grid.appendChild(newDiv)
+            cardcount += 1;
+        }
+    }
+}
+
+prv_btn.onclick = function () {
+
+    page_no -= 1
+    console.log(page_no);
+
+    grid.innerHTML = ''
+    for (let i = 10 * page_no; i < (10 * page_no) + 10; i++) {
+        if (i <= storage.length && i >= 0) {
+            let newDiv = document.createElement('div');
+
+            newDiv.innerHTML = card(storage[i]['title'], storage[i]['body'], storage[i]['create'], storage[i]['update'])
+            newDiv.setAttribute("class", "bg-gray-800 text-white p-5 rounded-2xl relative card");
+
+
+            grid.appendChild(newDiv)
+            cardcount += 1;
+        }
+    }
 }
 
 search_btn.onclick = function () {
@@ -129,6 +176,10 @@ function deleteCard(button) {
         }
     }
     card.remove();
+}
+
+function pgnxt(btn) {
+    page_no += 1
 }
 
 function card(title, body, create, update) {
