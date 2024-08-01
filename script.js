@@ -32,6 +32,7 @@ for (var i = 0; themeDots.length > i; i++) {
 	})
 }
 
+
 function setTheme(mode) {
 	if (mode == 'light') {
 		document.getElementById('theme-style').href = 'default.css';
@@ -95,4 +96,3 @@ submitBtn.addEventListener('click', () => {
 		return submitted = true;
 	}
 })
-
